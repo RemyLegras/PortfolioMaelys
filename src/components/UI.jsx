@@ -37,8 +37,7 @@ const pictures = [
   "portfolio-34",
   "portfolio-35",
   "portfolio-36",
-  "portfolio-37",
-  "portfolio-38",
+  "portfolio-37"
 ];
 
 export const pageAtom = atom(0);
