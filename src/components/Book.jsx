@@ -68,33 +68,34 @@ pageGeometry.setAttribute(
 );
 
 const whiteColor = new Color("white");
+const darkerColor = new Color("#333");
 const emissiveColor = new Color("orange");
 
 const pageMaterials = [
   new MeshStandardMaterial({
-    color: whiteColor,
+    color: darkerColor,
   }),
   new MeshStandardMaterial({
     color: "#111",
   }),
   new MeshStandardMaterial({
-    color: whiteColor,
+    color: darkerColor,
   }),
   new MeshStandardMaterial({
-    color: whiteColor,
+    color: darkerColor,
   }),
 ];
 
 pages.forEach((page) => {
-  useTexture.preload(`/textures/${page.front}.jpg`);
-  useTexture.preload(`/textures/${page.back}.jpg`);
+  useTexture.preload(`/PortfolioMaelys//textures/${page.front}.jpg`);
+  useTexture.preload(`/PortfolioMaelys//textures/${page.back}.jpg`);
   // useTexture.preload(`/textures/book-cover-roughness.jpg`);
 });
 
 const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
   const [picture, picture2, pictureRoughness] = useTexture([
-    `/textures/${front}.jpg`,
-    `/textures/${back}.jpg`
+    `/PortfolioMaelys//textures/${front}.jpg`,
+    `/PortfolioMaelys//textures/${back}.jpg`
     // ...(number === 0 || number === pages.length - 1
     //   ? [`/textures/book-cover-roughness.jpg`]
     //   : []),
@@ -241,7 +242,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
       ref={group}
       onPointerEnter={(e) => {
         e.stopPropagation();
-        setHighlighted(true);
+        setHighlighted(false);
       }}
       onPointerLeave={(e) => {
         e.stopPropagation();

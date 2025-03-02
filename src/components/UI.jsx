@@ -2,22 +2,43 @@ import { atom, useAtom } from "jotai";
 import { useEffect } from "react";
 
 const pictures = [
-  "DSC00680",
-  "DSC00933",
-  "DSC00966",
-  "DSC00983",
-  "DSC01011",
-  "DSC01040",
-  "DSC01064",
-  "DSC01071",
-  "DSC01103",
-  "DSC01145",
-  "DSC01420",
-  "DSC01461",
-  "DSC01489",
-  "DSC02031",
-  "DSC02064",
-  "DSC02069",
+  "portfolio-02",
+  "portfolio-03",
+  "portfolio-04",
+  "portfolio-05",
+  "portfolio-06",
+  "portfolio-07",
+  "portfolio-08",
+  "portfolio-09",
+  "portfolio-10",
+  "portfolio-11",
+  "portfolio-12",
+  "portfolio-13",
+  "portfolio-14",
+  "portfolio-15",
+  "portfolio-16",
+  "portfolio-17",
+  "portfolio-18",
+  "portfolio-19",
+  "portfolio-20",
+  "portfolio-21",
+  "portfolio-22",
+  "portfolio-23",
+  "portfolio-24",
+  "portfolio-25",
+  "portfolio-26",
+  "portfolio-27",
+  "portfolio-28",
+  "portfolio-29",
+  "portfolio-30",
+  "portfolio-31",
+  "portfolio-32",
+  "portfolio-33",
+  "portfolio-34",
+  "portfolio-35",
+  "portfolio-36",
+  "portfolio-37",
+  "portfolio-38",
 ];
 
 export const pageAtom = atom(0);
@@ -43,48 +64,8 @@ export const UI = () => {
   const [page, setPage] = useAtom(pageAtom);
 
   useEffect(() => {
-    const audio = new Audio("/audios/page-flip-01a.mp3");
+    const audio = new Audio("/PortfolioMaelys/audios/page-flip-01a.mp3");
     audio.play();
   }, [page]);
 
-  return (
-    <>
-      <main className=" pointer-events-none select-none z-10 fixed  inset-0  flex justify-between flex-col">
-        <a
-          className="pointer-events-auto mt-10 ml-10"
-          href="https://lessons.wawasensei.dev/courses/react-three-fiber"
-        >
-          <img className="w-20" src="/images/wawasensei-white.png" />
-        </a>
-        <div className="w-full overflow-auto pointer-events-auto flex justify-center">
-          <div className="overflow-auto flex items-center gap-4 max-w-full p-10">
-            {[...pages].map((_, index) => (
-              <button
-                key={index}
-                className={`border-transparent hover:border-white transition-all duration-300  px-4 py-3 rounded-full  text-lg uppercase shrink-0 border ${
-                  index === page
-                    ? "bg-white/90 text-black"
-                    : "bg-black/30 text-white"
-                }`}
-                onClick={() => setPage(index)}
-              >
-                {index === 0 ? "COUVERTURE" : `Page ${index}`}
-              </button>
-            ))}
-            <button
-              className={`border-transparent hover:border-white transition-all duration-300  px-4 py-3 rounded-full  text-lg uppercase shrink-0 border ${
-                page === pages.length
-                  ? "bg-white/90 text-black"
-                  : "bg-black/30 text-white"
-              }`}
-              onClick={() => setPage(pages.length)}
-            >
-              Dernière Page
-            </button>
-          </div>
-        </div>
-      </main>
-
-    </>
-  );
 };
